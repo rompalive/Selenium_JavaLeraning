@@ -20,6 +20,8 @@ public class BaseClass {
 	@BeforeMethod
 	public void InitializeDriver() {
 		driver = new ChromeDriver();
+		driver.get("https://www.allrecipes.com/");
+		driver.manage().window().maximize();
 	}
 	
 	
