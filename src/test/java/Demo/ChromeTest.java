@@ -1,10 +1,12 @@
 package Demo;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
 
 public class ChromeTest {
 
-	public static void main(String... ar)
+	@Test
+	public void Chrometest()
 	{
 		WebDriver driver = ChromeExecution.initialize();
 		driver.get("https://google.com");
