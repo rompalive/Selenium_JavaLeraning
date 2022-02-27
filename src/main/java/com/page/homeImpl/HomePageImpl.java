@@ -1,14 +1,12 @@
 package com.page.homeImpl;
 
-import static org.testng.Assert.assertEquals;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
 import com.page.home.HomePage;
-import com.utils.base.BaseClass;
+import com.utils.driverConfig.DriverManager;
 
 public class HomePageImpl implements HomePage
 
@@ -16,7 +14,7 @@ public class HomePageImpl implements HomePage
 	WebDriver driver;
 
 	public HomePageImpl() {
-		driver = BaseClass.driver;
+		driver = DriverManager.getDriver();
 	}
 
 	public void validatedSearchTxtBox(SoftAssert assertSf) {
