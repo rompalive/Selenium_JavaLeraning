@@ -1,20 +1,26 @@
 package com.utils.config;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Properties;  
+import java.util.Properties;
+
+import com.utils.constants.ProjectConstants;  
 public class PropertiesRead {  
   
-	static Map<String,String> configMap = new HashMap<>();
+	static Map<String,String> configMap = new HashMap<String, String>();
 	
     static{
     		FileReader reader;
 			try {
-				reader = new FileReader("/home/rajesh/git4/Selenium_JavaLeraning/src/test/resources/config/config.properties");
+				String filePath = new File("").getCanonicalPath()+ProjectConstants.CONFIGPATH;
+				reader = new FileReader(filePath);
 				Properties pRead=new Properties(); 
 				pRead.load(reader); 
 				Iterator itr=pRead.entrySet().iterator();

@@ -1,6 +1,6 @@
 package com.utils.constants;
 
-public class ProjectConstants {
+public final class ProjectConstants {
 
    //restrict instant restriction
     private  ProjectConstants() {
@@ -9,6 +9,8 @@ public class ProjectConstants {
 
     public static final String CHROME = "CHROME";
     public static final String FIREFOX="FIREFOX";
+    public static final String CONFIGPATH="/src/test/resources/config/config.properties";
+    
     
 
 }
