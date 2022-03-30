@@ -8,10 +8,12 @@ public interface HomePage
 
 		String loginLinkTxt = "Login";
 		
-		String  searchTxtBoxId = "search-block";
+		String  searchTxtBoxName = "search";
+		
+		String lnk_MyAccount= "My Account";
 			
 
-		public void validatedSearchTxtBox(String dishName,SoftAssert assertSf);
+		public void validatedSearchTxtBox(String itemName,SoftAssert assertSf);
 		
 		public void validatedLoginNavigation(SoftAssert assertSf);
 		

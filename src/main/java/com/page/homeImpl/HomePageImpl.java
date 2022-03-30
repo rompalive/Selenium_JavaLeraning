@@ -1,6 +1,7 @@
 package com.page.homeImpl;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
@@ -17,10 +18,10 @@ public class HomePageImpl implements HomePage
 		driver = DriverManager.getDriver();
 	}
 
-	public void validatedSearchTxtBox(String dishName,SoftAssert assertSf) {
-		String expectedTitle = "Recipe Results for "+dishName+" | Allrecipes";
-		driver.findElement(By.id(searchTxtBoxId)).sendKeys(dishName);
-		driver.findElement(By.id(searchTxtBoxId)).submit();
+	public void validatedSearchTxtBox(String itemName,SoftAssert assertSf) {
+		String expectedTitle = "Search - "+itemName;
+		driver.findElement(By.name(searchTxtBoxName)).sendKeys(itemName);
+		driver.findElement(By.name(searchTxtBoxName)).sendKeys(Keys.ENTER);;
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
@@ -48,7 +49,7 @@ public class HomePageImpl implements HomePage
 	}
 
 	public void validatedHomePageNavigation(SoftAssert assertSf) {
-		String expectedTitle = "Allrecipes | Food, friends, and recipe inspiration";
+		String expectedTitle = "Your Store";
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {

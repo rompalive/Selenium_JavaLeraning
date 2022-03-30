@@ -8,13 +8,13 @@ public final class TestDataSupplier {
 	
 	
 	
-	@DataProvider (name = "dish")
+	@DataProvider (name = "itemName")
 	public Object[] dishData() 
 	{
 	    return new Object [] 
 	    		
 	    { 
-	    	"Chicken","Pasta"
+	    	"Mac","Camera"
 	    };
 	}	
 	
