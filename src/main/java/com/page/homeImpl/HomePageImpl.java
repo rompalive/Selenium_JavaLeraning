@@ -17,9 +17,9 @@ public class HomePageImpl implements HomePage
 		driver = DriverManager.getDriver();
 	}
 
-	public void validatedSearchTxtBox(SoftAssert assertSf) {
-		String expectedTitle = "Recipe Results for Chicken | Allrecipes";
-		driver.findElement(By.id(searchTxtBoxId)).sendKeys("Chicken");
+	public void validatedSearchTxtBox(String dishName,SoftAssert assertSf) {
+		String expectedTitle = "Recipe Results for "+dishName+" | Allrecipes";
+		driver.findElement(By.id(searchTxtBoxId)).sendKeys(dishName);
 		driver.findElement(By.id(searchTxtBoxId)).submit();
 		try {
 			Thread.sleep(5000);

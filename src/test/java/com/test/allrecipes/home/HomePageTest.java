@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.page.homeImpl.HomePageImpl;
+import com.utils.ProjRequirements.TestDataSupplier;
 import com.utils.base.BaseTestClass;
 
 public class HomePageTest extends BaseTestClass {
@@ -16,22 +17,22 @@ public class HomePageTest extends BaseTestClass {
 
 	}
 
-	@Test
-	public void searchBlockTest() throws InterruptedException {
+	@Test(dataProvider="dish" ,dataProviderClass=TestDataSupplier.class)
+	public void searchBlockTest(String dishName) throws InterruptedException {
 		SoftAssert sofAsrt = new SoftAssert();
 		HomePageImpl homePage = new HomePageImpl();
-		homePage.validatedSearchTxtBox(sofAsrt);
+		homePage.validatedSearchTxtBox(dishName,sofAsrt);
 		sofAsrt.assertAll();
 	}
 
-	@Test
-	public void LoginButtonNavigationTest() throws InterruptedException {
+//	@Test
+	//public void LoginButtonNavigationTest() throws InterruptedException {
 
-		SoftAssert sofAsrt = new SoftAssert();
-		HomePageImpl homePage = new HomePageImpl();
-		homePage.validatedSearchTxtBox(sofAsrt);
-		sofAsrt.assertAll();
-
-	}
+	//	SoftAssert sofAsrt = new SoftAssert();
+	//	HomePageImpl homePage = new HomePageImpl();
+	//	homePage.validatedLoginNavigation(sofAsrt);
+	//	sofAsrt.assertAll();
+//
+	//}
 
 }

@@ -11,7 +11,7 @@ public interface HomePage
 		String  searchTxtBoxId = "search-block";
 			
 
-		public void validatedSearchTxtBox(SoftAssert assertSf);
+		public void validatedSearchTxtBox(String dishName,SoftAssert assertSf);
 		
 		public void validatedLoginNavigation(SoftAssert assertSf);
 		
