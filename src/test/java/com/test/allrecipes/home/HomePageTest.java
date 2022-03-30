@@ -17,22 +17,23 @@ public class HomePageTest extends BaseTestClass {
 
 	}
 
-	@Test(dataProvider="dish" ,dataProviderClass=TestDataSupplier.class)
-	public void searchBlockTest(String dishName) throws InterruptedException {
+	@Test(dataProvider = "itemName", dataProviderClass = TestDataSupplier.class)
+	public void searchBlockTest(String itemName)  {
 		SoftAssert sofAsrt = new SoftAssert();
 		HomePageImpl homePage = new HomePageImpl();
-		homePage.validatedSearchTxtBox(dishName,sofAsrt);
+		homePage.validatedSearchTxtBox(itemName, sofAsrt);
 		sofAsrt.assertAll();
 	}
 
-//	@Test
-	//public void LoginButtonNavigationTest() throws InterruptedException {
-
-	//	SoftAssert sofAsrt = new SoftAssert();
-	//	HomePageImpl homePage = new HomePageImpl();
-	//	homePage.validatedLoginNavigation(sofAsrt);
-	//	sofAsrt.assertAll();
-//
-	//}
+	
+//	  @Test 
+//	  public void LoginButtonNavigationTest() {
+//	  SoftAssert sofAsrt = new SoftAssert(); 
+//	  HomePageImpl homePage = new HomePageImpl(); 
+//	  homePage.validatedLoginNavigation(sofAsrt);
+//	  sofAsrt.assertAll();
+//	  
+//	  }
+	 
 
 }
